@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import App from "./App";
 
@@ -7,18 +7,25 @@ describe("Componente App", () => {
 
   it("o display deve mostrar '0'", () => {
     render(<App />);
-
     expect(screen.getByTestId("display-value")).toHaveDisplayValue("0");
   });
 
   // Comentado para tomar como base para próximos casos
-  // it("o display deve mostrar botao '0'", () => {
-  //   render(<App />);
+  it("o display deve mostrar botao '0'", () => {
+     render(<App />);
 
-  //   const zeroButton = screen.getByTestId("zero-button");
+     const zeroButton = screen.getByTestId("zero-button");
+     expect(zeroButton.textContent).toBe("0");
+   });
 
-  //   expect(zeroButton.textContent).toBe("0");
-  // });
+   // Aqui é o mesmo que ocorre quando o valor é 1
+   it("o display deve mostrar botao '1'", () => {
+    render(<App />);
+
+    const oneButton = screen.getByTestId("one-button");
+    fireEvent.click(oneButton); // Simulando o clique no botão 1;
+    expect(screen.getByTestId("display-value")).toHaveDisplayValue("1");
+   });
 
   it("o display deve mostrar os botões {0, 1, 2, ..., 9}", () => {
     throw new Error("Não implementado");
