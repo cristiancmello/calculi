@@ -14,7 +14,15 @@ function App() {
     <>
       <input data-testid="display-value" type="text" value={displayValue} readOnly />
       <button data-testid="zero-button" onClick={() => handleClick("0")}>0</button>
-      <button data-testid="zero-button" onClickCapture={() => handleClick("1")}>1</button>
+      <button data-testid="one-button" onClickCapture={() => handleClick("1")}>1</button>
+      <button data-testid="two-button" onClickCapture={() => handleClick("2")}>2</button>
+      <button data-testid="three-button" onClickCapture={() => handleClick("3")}>3</button>
+      <button data-testid="four-button" onClickCapture={() => handleClick("4")}>4</button>
+      <button data-testid="five-button" onClickCapture={() => handleClick("5")}>5</button>
+      <button data-testid="six-button" onClickCapture={() => handleClick("6")}>6</button>
+      <button data-testid="seven-button" onClickCapture={() => handleClick("7")}>7</button>
+      <button data-testid="eight-button" onClickCapture={() => handleClick("8")}>8</button>
+      <button data-testid="nine-button" onClickCapture={() => handleClick("9")}>9</button>
     </>
   );
 }
