@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Display from './Display';
 
 function App() {
   // Uma constante
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <>
-      <input data-testid="display-value" type="text" value={displayValue} readOnly />
+    <Display expression={{line: "", result:displayValue}} />  
       <button data-testid="zero-button" onClick={() => handleClick("0")}>0</button>
       <button data-testid="one-button" onClickCapture={() => handleClick("1")}>1</button>
       <button data-testid="two-button" onClickCapture={() => handleClick("2")}>2</button>
